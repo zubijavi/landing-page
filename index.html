@@ -1,44 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./assets/icono.png">
 </head>
+
 <body>
     <header>
         <img src="./assets/logo.svg" alt="Logo de la Landing Page">
-        <ul>
-            <li>Inicio</li>
-            <li>Servicios</li>
-            <li>Clientes</li>
-            <li>Contacto</li>
+        <ul class="nav-escritorio">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Sobre Nosotros</a>
+            <a href="#clientes">Clientes</a>
+            <a href="#contacto">Contacto</a>
         </ul>
+
+        <button popovertarget="nav-movil" popovertargetaction="toggle"><i class="fa-solid fa-bars"></i></button>
+        <div class="nav-movil" id="nav-movil" popover="auto">
+        <ul>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Sobre Nosotros</a>
+            <a href="#clientes">Clientes</a>
+            <a href="#contacto">Contacto</a>
+        </ul>
+    </div>
     </header>
-    <main>
+
+    <main id="inicio">
         <section class="hero">
             <article>
-                <h1>LANDING PAGE</h1>
-                <h4>Landing Page desarrolada por el alumno Javier Zubillaga para la entrega 3 del curso de Full Stack de Nucba</h4>
+                <h1 class="animated-text">LANDING PAGE</h1>
+                <h4>Landing Page desarrolada por Javier Zubillaga para el curso de Full Stack de Nucba</h4>
                 <div class="botones">
                     <button>Call To Action</button>
                     <button class="btn-2">Learn More</button>
                 </div>
             </article>
             <img src="./assets/undraw_working_remotely.svg" alt="Imagen de Portada">
-
-
         </section>
+        <div id="nosotros"></div>
         <section class="about">
             <h1>Sobre Nosotros</h1>
-            <p>Una landing page (página de aterrizaje) es una página web diseñada específicamente para convertir visitantes en leads o clientes. Su principal objetivo es captar la atención del usuario y motivarlo a realizar una acción específica, como llenar un formulario, suscribirse a una newsletter, descargar un ebook, o realizar una compra.</p>
+            <p>Una landing page (página de aterrizaje) es una página web diseñada específicamente para convertir
+                visitantes en leads o clientes. Su principal objetivo es captar la atención del usuario y motivarlo a
+                realizar una acción específica, como llenar un formulario, suscribirse a una newsletter, descargar un
+                ebook, o realizar una compra.</p>
             <p>
-                Una landing page bien diseñada es crucial para campañas de marketing digital y se enfoca en un solo objetivo, eliminando distracciones y optimizando la experiencia del usuario para maximizar las conversiones.
+                Una landing page bien diseñada es crucial para campañas de marketing digital y se enfoca en un solo
+                objetivo, eliminando distracciones y optimizando la experiencia del usuario para maximizar las
+                conversiones.
             </p>
         </section>
+        <section class="card">
+            <h1>Nuestras Ventajas</h1>
+            <div class="cards">
+                <article>
+                    <i class="fa-solid fa-arrows-to-eye"></i>
+                    <h3>Enfoque en la conversión</h3>
+                    <p>Diseñadas específicamente para convertir visitantes en leads o clientes, optimizando la llamada a
+                        la acción (CTA).</p>
+                </article>
+                <article>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Medición y análisis</h3>
+                    <p>Facilitan el seguimiento del rendimiento y la efectividad de campañas de marketing a través de
+                        métricas precisas.</p>
+                </article>
+                <article>
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    <h3>Segmentación y personalización</h3>
+                    <p>Permiten crear mensajes y ofertas personalizadas para audiencias específicas, aumentando la
+                        relevancia y la tasa de conversión.</p>
+                </article>
+
+            </div>
+
+        </section>
     </main>
-    
+    <footer>
+        <section>
+            <article>
+                <h2 id="contacto">Contactanos</h2>
+                <address>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>Av. Génova 640 698, S2000 Rosario
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:landing@landing.com">landing@landing.com</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+1234567890">+1 234 567 890</a>
+                    </div>
+                </address>
+                <div class="redes">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </article>
+            <aside>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.399539858405!2d-60.67676062497766!3d-32.91404067024133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b654a08896e0f7%3A0x4ee98cd74ab24d07!2sEstadio%20Gigante%20de%20Arroyito!5e0!3m2!1ses!2sar!4v1719261626066!5m2!1ses!2sar"
+                    width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </aside>
+        </section>
+        <small>&copy; 2024 Nucba. Todos los derechos reservados.</small>
+    </footer>
+
+
 </body>
+
 </html>

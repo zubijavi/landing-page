@@ -3,48 +3,125 @@
     padding: 0;
     font-family: Verdana, sans-serif;
 }
-body{
-    background: #F7F8F8;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ACBB78, #F7F8F8);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+body {
+    /* background: #F7F8F8; */
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACBB78, #F7F8F8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACBB78, #F7F8F8);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 /* HEADER */
 
 header {
+    background: linear-gradient(to right, #ACBB78, #F7F8F8);
     border-bottom: 0.1vw rgb(182, 182, 182) solid;
     display: flex;
-    margin: 0.2vw 2vw;
+    padding-left: 2vw;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 1000;
 }
 
 header img {
-    height: 6vw;
+    height: 8vw;
     /* border: dashed darkblue 2px; */
 }
 
-header ul {
+header button {
+    display: none;
+}
+
+header .nav-escritorio {
     /* border: dashed darkblue 2px; */
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 50%;
-    font-size: 1.3vw;
+    font-size: 2vw;
+}
+
+header .nav-movil {
+    border: none;
+    position: fixed;
+    background: transparent;
+    /* O 'fixed' si deseas que se mantenga en el mismo lugar al hacer scroll */
+    top: 15vw;
+    width: 100%;
+    right: 0;
+    /* Alinea el elemento al borde derecho del contenedor */
+
 
 }
 
-header ul li:hover {
-    cursor: pointer;
+header .nav-movil a {
+    text-decoration: none;
+    color: wheat;
 }
+
+header .nav-escritorio a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 0 5vw;
+        justify-content: space-between;
+    }
+
+    header img {
+        height: 14vw;
+    }
+
+    header .nav-escritorio {
+        display: none;
+    }
+
+    header button {
+        display: block;
+        background: none;
+        border: none;
+        color: inherit;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+
+    header button i {
+        font-size: 10vw;
+    }
+
+    header .nav-movil ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 4vw;
+        background-color: rebeccapurple;
+        width: 80%;
+        position: relative;
+        margin: 0 auto; /* Centra horizontalmente el elemento */
+
+    }
+}
+
+
 
 /* MAIN */
 
 main {
-    margin: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5vw;
 }
 
 main section {
@@ -52,6 +129,15 @@ main section {
     justify-content: center;
     align-items: center;
     width: 90%;
+    padding-top: 10vw;
+
+}
+
+@media (max-width: 800px) {
+    main section {
+        padding-top: 16vw;
+    }
+
 }
 
 .hero {
@@ -65,11 +151,12 @@ main section {
     flex-direction: column;
     justify-content: center;
     gap: 2vw;
-    padding: 1rem;
 }
 
 .hero article h1 {
     color: rgb(43, 43, 43);
+    font-size: 3.5vw;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .hero article h4 {
@@ -78,7 +165,7 @@ main section {
 
 .hero article .botones button {
     width: 35%;
-    height: 2rem;
+    padding: 1vw;
     border-radius: 20px;
     border: none;
     background-color: rgb(43, 43, 43);
@@ -98,12 +185,191 @@ main section {
 
 .hero img {
     width: 35%;
+    display: inline;
+}
+.about {
+    flex-direction: column;
+    text-align: center;
+    gap: 1vw;
+    padding-bottom: 0;
+
 }
 
-.about {
-    text-align: center;
-    color: rgb(43, 43, 43);
+.card {
+    display: flex;
     flex-direction: column;
+    gap: 4rem;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+
+.card .cards {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    gap: 6vw;
+}
+
+.card .cards article {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     gap: 2rem;
+}
+
+.card .cards article i {
+    font-size: 6vw;
+}
+
+@media (max-width: 800px) {
+    .hero article {
+        width: 100%;
+    }
+
+    .hero article h1 {
+        font-size: 6vw;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .hero article h4 {
+        font-size: 3vw;
+    }
+
+    .hero article .botones {
+        /* border: 2px dashed red; */
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .hero article .botones button {
+        font-size: 4vw;
+    }
+
+    .hero img {
+        display: none;
+        ;
+    }
+
+    .about {
+        font-size: 130%;
+        flex-direction: column;
+        text-align: center;
+        gap: 1vw;
+        padding-bottom: 0;
+
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+
+
+        font-size: 130%;
+
+    }
+
+    .card .cards {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: space-around;
+        gap: 6vw;
+    }
+
+    .card .cards article {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .card .cards article i {
+        font-size: 10vw;
+    }
+
+
+}
+
+
+
+
+
+
+footer {
+    background-color: rgb(47, 47, 47);
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+    gap: 2rem;
+}
+
+footer section {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer section article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+}
+
+footer section article address div {
+    display: flex;
+    width: 100%;
+    margin: 1vw;
+    gap: 2vw;
+}
+
+footer section article address div a {
+    text-decoration: none;
+    color: wheat;
+}
+
+footer section article .redes {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}
+footer aside{
+    display: block;
+}
+
+footer small {
+    text-align: center;
+}
+@media (max-width: 800px) {
+
+
+    
+    footer section article {
+        height: 40vw;
+        width: 100%;
+    }
+    
+
+    
+    footer section article .redes {
+        font-size: 10vw;
+    }
+    footer aside{
+        display: none;
+    }
+    
+    footer small {
+        font-size: 4vw;
+    }
+
 
 }
